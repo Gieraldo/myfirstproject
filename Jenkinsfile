@@ -8,7 +8,7 @@ pipeline {
             }   
         }
         
-        stage('Deployment To Server akuy') {
+        stage('Deployment To Server aldo2') {
             steps{
                 echo "deploy to apache2"
                     sshagent(credentials: ['Apache2']) {
