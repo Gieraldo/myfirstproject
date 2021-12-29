@@ -46,7 +46,7 @@
 									<b><span class="red">Halaman</span></b>
 									<b><span class="white" id="id-text2">Login</span></b>
 								</h1>
-								<h4 class="blue" id="id-company-text"> Aplikasi Sistem Jasa Servis Komputer</h4>
+								<h4 class="blue" id="id-company-text"> Aplikasi Sistem Jasa Servis Komputer aldoo</h4>
 							</div>
 
 							<div class="space-6"></div>
