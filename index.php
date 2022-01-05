@@ -56,7 +56,7 @@
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger">
-												<b><center>Silahkan Login</center></b>
+												<b><center>Silahkan Login Aldoo</center></b>
 											</h4>
 
 											<div class="space-6"></div>
