@@ -4,19 +4,17 @@ pipeline {
     }
     
     stages {
-        stage('Build Docker') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
-         
-    stages {
         stage('Ready deploy to server') {
             steps{
                 echo "ready"
             }   
         } 
+        
+        stage('Build Docker') {
+            steps {
+                sh 'node --version'
+            }
+        }
         
         stage('Deployment To Server aris') {
             steps{
