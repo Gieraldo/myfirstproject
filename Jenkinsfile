@@ -1,9 +1,6 @@
 pipeline {   
     agent any
-
-    agent {
-        docker { image 'node:16.13.1-alpine' }
-    }
+    
     stages {
         stage('Ready deploy to server') {
             steps{
@@ -11,13 +8,7 @@ pipeline {
             }   
         } 
         
-        stage('Build Docker') {
-            steps {
-                sh 'node --version'
-            }
-        }
-        
-        stage('Deployment To Server aris') {
+        stage('Deployment To Server aldoo') {
             steps{
                 echo "deploy to apache2"
                     sshagent(credentials: ['Apache2']) {
