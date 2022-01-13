@@ -19,7 +19,7 @@ pipeline {
                     //sh "ssh root@3.111.35.31 cd /var/www/html/stroberi && pwd && git pull origin master"
                     
                  }    
-            }
+            } 
         } 
 
         stage("Notifications") {
