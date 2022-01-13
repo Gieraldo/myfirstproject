@@ -14,8 +14,8 @@ pipeline {
                     sshagent(credentials: ['Apache2']) {
                     sh "cd .."
                     sh "ls"
-                    sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='CI-CD Pipeline For Project Aldo Has Been Successfully Deploy To Server Aris'"
-                    sh "scp -r * root@3.133.84.143:/var/www/html/aldo"
+                    //sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='CI-CD Pipeline For Project Aldo Has Been Successfully Deploy To Server Aris'"
+                    //sh "scp -r * root@3.133.84.143:/var/www/html/aldo"
                     //sh "ssh root@3.111.35.31 cd /var/www/html/stroberi && pwd && git pull origin master"
                     
                  }    
@@ -24,11 +24,9 @@ pipeline {
 
         stage("Notifications") {
             steps{
-				deleteDir()
-                echo "Job Success"
-                notifications(telegram_url: telegram_url, telegram_chatid: telegram_chatid, 
-                job: env.JOB_NAME, job_numb: env.BUILD_NUMBER, job_url: env.BUILD_URL, job_status: job_success, unitTest_score: unitTest_score
-                )
+		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='CI-CD Pipeline For Project Aldo Has Been Successfully Deploy To Server Aris'"
+                sh "scp -r * root@3.133.84.143:/var/www/html/aldo"
+
             }
         } 
       
