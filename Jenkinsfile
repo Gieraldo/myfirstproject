@@ -24,7 +24,8 @@ pipeline {
 
         stage("Notifications") {
             steps{
-		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='CI-CD Pipeline For Project Aldo Has Been Successfully Deploy To Server Aris'"
+		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d 
+                  text='Dear Team // CI-CD Pipeline SUCCESS with build'"
                 sh "scp -r * root@3.133.84.143:/var/www/html/aldo"
 
             }
