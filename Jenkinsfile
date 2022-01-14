@@ -21,13 +21,10 @@ pipeline {
         } 
 
         stage("Notifications") {
-		deleteDir()
-                echo "Job Success"
-                notifications(telegram_url: telegram_url, telegram_chatid: telegram_chatid, 
-                job: env.JOB_NAME, job_numb: env.BUILD_NUMBER, job_url: env.BUILD_URL, job_status: job_success
-                )
-		echo "Send Notification to Telegram"
-		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='Dear Team  \n\n CI-CD Pipeline System Absensi Aldo SUCCESS Build \n\n More info at: ${args.job_url}'"
+		steps{
+		   echo "Send Notification to Telegram"
+		   sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='Dear Team \n\n CI-CD Pipeline System Absensi Aldo SUCCESS Build \n\n More info at: http://18.222.143.240:8080/job/testing-aldo/'"
+		}
         } 
       
     } 
