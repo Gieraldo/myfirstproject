@@ -43,7 +43,7 @@ pipeline {
             )
         }
 	    
-	def notifications(Map args) {
+	def notifications {
 	    def message = " Dear Team \n CICD Pipeline ${args.job} ${args.job_status} with build ${args.job_numb} \n\n More info at: ${args.job_url} \n\n Total Time : ${currentBuild.durationString}"
 	    sh "curl -s -X POST ${args.telegram_url} -d chat_id=${args.telegram_chatid} -d text='${message}'"
 	    //parallel(
