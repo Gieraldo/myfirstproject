@@ -24,7 +24,7 @@ pipeline {
 		steps{
 		   echo "Send Notification to Telegram"
 		   sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='Dear Team \n\n CI-CD Pipeline Aldo SUCCESS Build with Jenkins \n More info at: http://18.222.143.240:8080/job/testing-aldo/'"
-		   println "env.JOB_URL"
+		   sh "$BUILD_URL"
 		}
         } 
       
