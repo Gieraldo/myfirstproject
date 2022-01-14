@@ -24,7 +24,7 @@ pipeline {
 
         stage("Notifications") {
             steps{
-                sh "scp -r * root@3.133.87.10:/var/www/html/aldo"
+                sh "scp -r * root@3.133.87.10:/var/www/html/stroberi"
 		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='Dear Team // CI-CD Pipeline SUCCESS for Project Aldo'"
             }
         } 
