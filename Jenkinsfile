@@ -34,7 +34,7 @@ pipeline {
                 job: env.JOB_NAME, job_numb: env.BUILD_NUMBER, job_url: env.BUILD_URL, job_status: job_success
                 )
             }
-        } catch (e) {
+        }
 
         stage ("Error") {
 			deleteDir()
