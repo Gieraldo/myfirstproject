@@ -22,7 +22,7 @@ pipeline {
 
         stage("Notifications") {
             steps{
-		    echo "Send Notification to Telegram
+		    echo "Send Notification to Telegram"
 		sh "curl -s -X POST https://api.telegram.org/bot5021645900:AAFxQI0ltL5dRTNHqLfhg1Ko1ll7hUujjp8/sendMessage -d chat_id=-1001131394773 -d text='Dear Team  \n\n  CI-CD Pipeline System Absensi Aldo SUCCESS Build'"
 
             }
