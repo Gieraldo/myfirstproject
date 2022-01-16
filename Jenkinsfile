@@ -14,11 +14,13 @@ pipeline {
                     sshagent(credentials: ['Apache2']) {
                     sh "cd .."
                     sh "ls" 
+		    sh "sudo su root@3.133.87.10"
+		    sh "	    
 		    sh "scp -r * root@3.133.87.10:/var/www/html/stroberi"	    
                     //sh "ssh root@3.111.35.31 cd /var/www/html/stroberi && pwd && git pull origin master"
                  }    
             } 
-        } 
+        }  
 
         stage("Notifications") {
 		steps{
