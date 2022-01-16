@@ -15,8 +15,10 @@ pipeline {
                     sh "cd .."
                     sh "ls"
 		    sh "ssh root@3.133.87.10 -p 22"
-		    sh "ls"	     
-		    //sh "scp -r * root@3.133.87.10:/var/www/html/stroberi"	    
+		    sh "ls"
+		    sh "sudo rm -rf /var/www/html/stroberi"
+		    sh "sudo mkdir /var/www/html/stroberi"
+		    sh "scp -r * root@3.133.87.10:/var/www/html/stroberi"	    
                     //sh "ssh root@3.111.35.31 cd /var/www/html/stroberi && pwd && git pull origin master"
                  }    
             } 
