@@ -14,7 +14,7 @@ def job_error           = "ERROR"
                 echo "deploy to apache2"
                     sshagent(credentials: ['Apache2']) {
                     sh "pwd"
-                    sh "ls"
+                    sh "ls" 
                     sh 'scp -r * /var/lib/jenkins/workspace/admin-dashboard/ root@3.138.191.14:/var/www/html/stroberi'
                     //ssh "cd /var/www/html/stroberi && pwd && git pull origin master"
                     }    
